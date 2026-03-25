@@ -35,13 +35,13 @@ class DebitCardApplicationTest {
     }
 
     @Test
-    void validData () {
+    void validData() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Заикин Антон");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79999999999");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
-       assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 }
